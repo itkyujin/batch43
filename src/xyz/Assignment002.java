@@ -14,11 +14,11 @@ public class Assignment002 {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(url);
-        }catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             System.out.println("Failed to read driver"+e.getMessage());
             e.printStackTrace();
             connection = null;
-        }catch (SQLException e1) {
+        } catch (SQLException e1) {
             System.out.println("Unable to connect"+e1.getMessage());
             e1.printStackTrace();
         }

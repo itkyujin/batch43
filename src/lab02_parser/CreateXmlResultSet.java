@@ -23,7 +23,7 @@ public class CreateXmlResultSet {
     public static void main(String[] args) {
 
         // String to connect to local database
-        String connectionUrl = "jdbc:mysql://localhost:3306/petstore?user=root&password=password1234";
+        String connectionUrl = "jdbc:mysql://localhost:3306/carsdb?user=root&password=password1234";
 
         // Connection, Statement, and ResultSet objects set to null
         Connection connection = null;
@@ -47,7 +47,7 @@ public class CreateXmlResultSet {
 
             stmt = connection.createStatement();
 
-            res = stmt.executeQuery("SELECT * from SPORTSCARS");
+            res = stmt.executeQuery("SELECT * from sportscars");
 
             try{
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -96,6 +96,7 @@ public class CreateXmlResultSet {
             e.printStackTrace();
         } finally {
             try {
+                assert res != null;
                 res.close();
                 stmt.close();
                 connection.close();
