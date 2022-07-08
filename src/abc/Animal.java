@@ -32,6 +32,7 @@ public class Animal {
 
     public String getColor() {
         return color;
+        
     }
 
     public void setColor(String color) {
